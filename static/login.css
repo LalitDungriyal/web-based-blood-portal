@@ -1,0 +1,121 @@
+body{
+	margin:0px;
+	padding:0px;
+}
+
+.login{
+	background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),url(/static/images/images/b3.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position:center;
+	width:100%;
+	height:100vh;
+	padding-top:20px;
+	filter:blur(8px);
+}
+.loginform{
+    margin-top: 70vh;
+    margin: auto;
+    width: 407px;
+    height: 320px;
+    background-color: white;
+    opacity: 0.5;
+    position: absolute;
+    top: 18vh;
+    left: 31vw;
+    padding-top: 19vh;
+    padding-left: 11vw;
+    font-family: 'Mukta', sans-serif;
+}
+.loginform input[type="email"]{
+    outline: none;
+    width: 191px;
+    height: 29px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    margin-left: 38px;
+    font-size:13px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.loginform input[type="password"]{
+	outline:none;
+    margin-top: 37px;
+    width: 191px;
+    height: 29px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    margin-left:19px;
+    font-size:13px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+.loginform .submit button{
+	background: none;
+    outline: none;
+    margin-top: 70px;
+    margin-left: 72px;
+    height: 31px;
+    width: 140px;
+    cursor: pointer;
+    transition:transform 0.5s;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.loginform .submit button a{
+    margin-left: 0px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+}
+
+.loginform .submit button:hover{
+	transform:scale(1.1);
+}
+.loginform .signup button{
+	width: 105px;
+    background:none;
+    cursor:pointer;
+    position: absolute;
+    bottom: 53px;
+    right: 52px;
+    font-family: 'Josefin Sans', sans-serif;
+    transition:background-color 1s;
+
+}
+.loginform input[type="button"]:hover{
+	background-color:#84e284;
+}
+.backbutton button{
+	position: absolute;
+    top: 50px;
+    left: 50px;
+    background: none;
+    font-size: 40px;
+    width: 56px;
+    transition:transform 1s;
+    border-top-style:none;
+    border-bottom-style:none;
+    border-left-style:none;
+    border-right-style: none;
+}
+.backbutton button:hover{
+	transform:scale(1.2);
+}
+
+.backbutton button a{
+	text-decoration: none;
+	color:black;
+}
+.loginform a{
+	font-size: 12px;
+    margin-left: 100px;
+}
+.loginform a:hover{
+	color:red;
+}
+
+
+
+

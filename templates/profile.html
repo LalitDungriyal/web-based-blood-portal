@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %} profile {% endblock %}
+
+{% block css %}
+<style>
+	.tablecss{
+		margin-top:100px;
+	}
+	.tablecss table,tr,td{
+		border:1px solid black;
+		text-align: center;
+	}
+	.tablecss table{
+		width:100%;
+		border-collapse: collapse;
+	}
+	body{
+				background-color:#e1e6ea;
+			}
+			.logoportal{
+				margin-top: 12vh;
+				   background: url(/static/images/logo/logo.svg);
+				   background-size: cover;
+				   height: 85px;
+				   width: 384px;
+				   margin-left: 63vw;
+				   cursor: pointer;
+			}
+			.titleportal
+			{
+				color: white;
+				   margin: 10vh auto;
+				   margin-left: -74vw;
+				   margin-top: 17vh;
+			}
+			.titleportal h1{
+				font-size:2rem;
+				font-family: 'Sansita Swashed', cursive;
+				cursor:pointer;
+			}
+			.titleportal p{
+				font-size:13px;
+				padding-left:20px;
+			}
+			
+			.containerportal{
+				height:100vh;
+				width:100%;
+				display:flex;
+			}
+			.menu{
+				height:84.5vh;
+				width:23%;
+				background-color:white;
+				margin:10px;
+				border: 0.5px solid #c5b6b6;
+				padding-top:89px;
+			}
+			.userpic img{
+				height: 150px;
+				   width: 150px;
+				   border: 1px solid black;
+				   border-radius: 100px;
+				   cursor: pointer;
+				   position: relative;
+				   margin-top: -168px;
+				   margin-bottom: 24px;
+				   margin-left: 20px;
+			}
+			.other{
+				height:98vh;
+				width:77%;
+				margin:10px;
+				background-color:white;
+				border: 0.5px solid #c5b6b6;
+			}
+			.loginportal{
+					   height: 30px;
+					   margin-top: 30vh;
+					   margin-right: 1vw;
+					   border: 2px solid;
+			}
+			.loginportal button{
+				background:transparent;
+				border:1px solid grey;
+				height:30px;
+				width:72px;
+			}
+			.loginportal a{
+				text-decoration:none;
+				color:black;
+			}
+			.data{
+				height: 6vh;
+				border: 1px solid #ccc2c2;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding-top: 10px;
+				padding-left: 50px;
+				cursor:pointer;
+			}
+			.data a{
+				text-decoration:none;
+				color:black;
+				text-align:center;
+			}
+			.data:hover{
+				background-color:#e1e6ea;
+				color:red;
+			}
+			.navportal{
+				display:flex;
+				height:7vh;
+				border:1px solid #e1e6ea;
+			}
+			.navcontent{
+				height: 5vh;
+				border: 1px solid #ccc2c2;
+				margin-left: 0px;
+				padding-top: 11px;
+				padding-left: 50px;
+				cursor: pointer;
+				width: 148px;
+			}
+			.navcontent a{
+				text-decoration:none;
+				color:black;
+				text-align:center;
+			}
+			.navcontent:hover{
+				background-color:#e1e6ea;
+			}
+			.Home{
+				height: 62vh;
+				width: 72vw;
+				border: 1px solid #e1e6ea;
+				margin-top: 24vh;
+				margin-left: 1vw;
+			}
+			.activecl{
+				background-color:#e1e6ea;
+			}
+			.Home h1{
+				padding-top:50px;
+				padding-left:30px;
+				font-family: 'Vollkorn', serif;
+	
+			}
+			.Home p{
+				padding-left:51px;
+				padding-top:1px;
+				font-family: 'Vollkorn', serif;
+			}
+			.Home button{
+						background: transparent;
+					 border: 1px solid #8e8181;
+					 height: 32px;
+					 margin-left: 64vw;
+					 margin-top: 2vh;
+					 outline:none;
+					 cursor:pointer;
+			}
+			.Home a{
+				text-decoration:none;
+				color:black;
+				text-align:center;
+			}
+			.profiledata{
+				display:flex;
+				margin-left:60px;
+				margin-top:200px;
+				font-size:20px;
+				border:1px solid grey;
+
+			}
+			.staticdata{
+				border:1px solid grey;
+				height:200px;
+				width:33%	
+
+
+			}
+			.imagechanger{
+				border:1px solid grey;
+				margin-left:150px;
+				height:200px;
+				width:75%;
+			}
+	</style>
+{% endblock %}
+
+{% block nav %}
+		<div class="navportal">
+			<div class="navcontent "><a href="/userportal/portal">Home</a></div>
+			<div class="navcontent "><a href="/userportal/mydonations">My Donations</a></div>
+			<div class="navcontent"><a href="/userportal/learnaboutdonation">LearnAboutDonation</a></div>
+			<div class="navcontent"><a href="/userportal/event">Event List</a></div>
+			<div class="navcontent activecl"><a href="/userportal/profile">My profile</a></div>
+		</div>
+	{% endblock %}
+{% block content %}
+
+<div class="profiledata">
+	<div class="staticdata">
+		<div>Username: &nbsp;&nbsp;&nbsp;&nbsp;{{user.username}}</div>
+		<div>Name: &nbsp;&nbsp;&nbsp;&nbsp;{{user.first_name}} {{user.last_name}}</div>
+		<div>Email: &nbsp;&nbsp;&nbsp;&nbsp;{{user.email}}</div>
+		<div>Bloodgroup: &nbsp;&nbsp;&nbsp;&nbsp;{{user.profile.bloodgroup}}</div>
+	</div>
+	<div class="imagechanger">
+		<form action="" method='POST' enctype='multipart/form-data'>
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit"  name='update information'>
+		  </form>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+var path=(window.url).createObjectURL(file);
+console.log(path)
+</script>
+{% endblock %}
+

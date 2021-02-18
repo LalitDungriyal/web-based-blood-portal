@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<!--<link rel="stylesheet" href="style.css">-->
+	<link rel="stylesheet" href="{% static 'login.css' %}">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+
+	<div class="login">
+		
+		
+	</div>
+	<form action="login" method="post" id="formlogin">
+
+		{% csrf_token %}
+
+		<div>
+			{% for message in messages %}
+			{{message}}
+			{% endfor %}
+		</div>
+	<div class="loginform">
+
+			<div><strong>E-mail:</strong> <input type="text" placeholder="Example@gmail.com" name="username"></div>
+			<div><strong>Password:</strong><input type="password" placeholder="Password" name="password"></div>
+			<div class="submit"><button><a href="#" onclick="document.getElementById('formlogin').submit();">sign in</a></button></div>
+			<div><a href="#">forgot password</a></div>
+			<div class="signup"><a href="/accounts/signup" >Sign up</a></div>
+	</div>
+	
+	</form>
+	<div class="backbutton">
+		<button>
+			<a href="/">&#10094</a>
+		</button>
+	</div>
+
+	
+</body>
+</html>
